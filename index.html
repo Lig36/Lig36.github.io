@@ -3,291 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Resume</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>ภูธเนศ ยูเปีย - Developer Portfolio</title>
     
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* CSS เดิมที่อยู่ในไฟล์ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .profile-card {
-            background: white;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .profile-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 40px;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid white;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .profile-image i {
-            font-size: 80px;
-            color: #666;
-        }
-
-        .profile-header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .profile-header .title {
-            font-size: 1.2em;
-            opacity: 0.95;
-            margin-bottom: 20px;
-            min-height: 1.5em; /* เพิ่มเพื่อให้ตำแหน่งไม่กระโดดเวลาพิมพ์ */
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 50px;
-            transition: transform 0.3s;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-3px);
-            background: rgba(255,255,255,0.3);
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .profile-content {
-            padding: 40px;
-            background: white;
-        }
-
-        .section {
-            margin-bottom: 40px;
-            animation: slideIn 0.5s ease;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .section-title {
-            font-size: 1.8em;
-            color: #333;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-        }
-
-        .section-title i {
-            color: #667eea;
-        }
-
-        .about-text {
-            color: #666;
-            line-height: 1.8;
-            font-size: 1.1em;
-        }
-
-        .timeline-item {
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 3px solid #667eea;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 0;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: #667eea;
-        }
-
-        .timeline-item h3 {
-            color: #333;
-            font-size: 1.3em;
-            margin-bottom: 5px;
-        }
-
-        .timeline-item .subtitle {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .timeline-item .date {
-            color: #999;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .timeline-item p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .skill-category {
-            flex: 1 1 300px;
-        }
-
-        .skill-category h3 {
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.9em;
-            transition: transform 0.3s;
-        }
-
-        .skill-tag:hover {
-            transform: scale(1.05);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .project-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
-        }
-
-        .project-card i {
-            font-size: 2.5em;
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-
-        .project-card h3 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .project-card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .project-links a {
-            color: #667eea;
-            text-decoration: none;
-            font-size: 0.9em;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        @media (max-width: 768px) {
-            .profile-header h1 { font-size: 2em; }
-            .contact-info { flex-direction: column; align-items: stretch; }
-            .contact-item { justify-content: center; }
-        }
-    </style>
 </head>
 <body>
+    <!-- Matrix Background -->
+    <div class="matrix-bg" id="matrix"></div>
+
     <div class="container">
         <div class="profile-card">
+            <!-- Terminal Header -->
             <div class="profile-header">
                 <div class="profile-image">
-        <img src="/my profile /1000010565.png" alt="my profile" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="my profile /1000010565.png" alt="ภูธเนศ ยูเปีย" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
+                
+                <!-- Terminal Status -->
+                <div style="display: flex; gap: 15px; justify-content: center; margin: 10px 0 20px;">
+                    <span><span style="color: #00ff9d;">●</span> <span style="color: #8b949e;">Online</span></span>
+                    <span><span style="color: #ffb86b;">●</span> <span style="color: #8b949e;">Coding</span></span>
+                    <span><span style="color: #ff5555;">●</span> <span style="color: #8b949e;">Available</span></span>
+                </div>
+
                 <h1>ภูธเนศ ยูเปีย</h1>
-                <div class="title"></div> <div class="contact-info">
+                <div class="title">Full Stack Developer & UI/UX Designer</div>
+                
+                <!-- Terminal Contact Info -->
+                <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <a href="tel:097-925-0634">097-925-0634</a>
@@ -303,29 +49,47 @@
                 </div>
             </div>
 
+            <!-- Main Content -->
             <div class="profile-content">
+                <!-- About Section -->
                 <section class="section">
                     <h2 class="section-title">
-                        <i class="fas fa-user"></i>
-                        เกี่ยวกับฉัน
+                        <i class="fas fa-terminal"></i> ./about.sh
                     </h2>
                     <p class="about-text">
-                        นักพัฒนาซอฟต์แวร์ที่มีประสบการณ์มากกว่า 5 ปี ในการพัฒนาเว็บแอปพลิเคชันและโมบายแอปพลิเคชัน 
+                        <span style="color: #00ff9d;">$</span> นักพัฒนาซอฟต์แวร์ที่มีประสบการณ์มากกว่า 5 ปี 
+                        ในการพัฒนาเว็บแอปพลิเคชันและโมบายแอปพลิเคชัน 
                         มีความเชี่ยวชาญด้าน Frontend และ Backend พร้อมเรียนรู้เทคโนโลยีใหม่ๆ 
                         และมุ่งมั่นที่จะสร้างผลงานที่มีคุณภาพและตอบโจทย์ผู้ใช้งาน
                     </p>
                 </section>
 
+                <!-- Stats Section -->
+                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:40px 0; text-align:center;">
+                    <div class="stat-box">
+                        <h3 style="font-size:2.5em; color:#00ff9d; font-family:'Fira Code'">5+</h3>
+                        <p style="color:#8b949e;">ปีประสบการณ์</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3 style="font-size:2.5em; color:#00b8ff; font-family:'Fira Code'">20+</h3>
+                        <p style="color:#8b949e;">โปรเจกต์สำเร็จ</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3 style="font-size:2.5em; color:#b300ff; font-family:'Fira Code'">70+</h3>
+                        <p style="color:#8b949e;">ลูกค้าพึงพอใจ</p>
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
                 <section class="section">
                     <h2 class="section-title">
-                        <i class="fas fa-briefcase"></i>
-                        ประสบการณ์ทำงาน
+                        <i class="fas fa-briefcase"></i> ./experience.log
                     </h2>
                     
                     <div class="timeline-item">
                         <h3>Senior Full Stack Developer</h3>
                         <div class="subtitle">บริษัท เทค โซลูชั่น จำกัด</div>
-                        <div class="date">2026 - ปัจจุบัน</div>
+                        <div class="date">2026 - present</div>
                         <p>พัฒนาและดูแลระบบหลักของบริษัท ออกแบบ API และ Database 
                         รวมถึงการพัฒนา Frontend ด้วย React และ Vue.js</p>
                     </div>
@@ -339,15 +103,15 @@
                     </div>
                 </section>
 
+                <!-- Skills Section -->
                 <section class="section">
                     <h2 class="section-title">
-                        <i class="fas fa-code"></i>
-                        ทักษะความสามารถ
+                        <i class="fas fa-code"></i> ./skills --list
                     </h2>
                     
                     <div class="skills-container">
                         <div class="skill-category">
-                            <h3>Frontend</h3>
+                            <h3>Frontend //</h3>
                             <div class="skill-items">
                                 <span class="skill-tag">HTML5/CSS3</span>
                                 <span class="skill-tag">JavaScript</span>
@@ -359,7 +123,7 @@
                         </div>
 
                         <div class="skill-category">
-                            <h3>Backend</h3>
+                            <h3>Backend //</h3>
                             <div class="skill-items">
                                 <span class="skill-tag">Node.js</span>
                                 <span class="skill-tag">Python</span>
@@ -372,27 +136,141 @@
                     </div>
                 </section>
 
+                <!-- Projects Section -->
                 <section class="section">
                     <h2 class="section-title">
-                        <i class="fas fa-share-alt"></i>
-                        ช่องทางติดต่อ
+                        <i class="fas fa-laptop-code"></i> ./projects --latest
                     </h2>
                     
-                    <div class="contact-info" style="justify-content: flex-start;">
-                        <div class="contact-item" style="background: #f0f0f0;">
-                            <i class="fab fa-github" style="color: #333;"></i>
-                            <a href="#" style="color: #333;">github.com/phutanet</a>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <i class="fas fa-store"></i>
+                            <h3>E-Commerce Platform</h3>
+                            <p>ระบบขายของออนไลน์ครบวงจร รองรับการชำระเงินและระบบจัดการสต็อก</p>
+                            <div class="project-links">
+                                <a href="#"><i class="fab fa-github"></i> view code</a>
+                                <a href="#"><i class="fas fa-external-link-alt"></i> live demo</a>
+                            </div>
                         </div>
-                        <div class="contact-item" style="background: #f0f0f0;">
-                            <i class="fab fa-linkedin" style="color: #0077b5;"></i>
-                            <a href="#" style="color: #333;">linkedin.com/in/phutanet</a>
+
+                        <div class="project-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Mobile App</h3>
+                            <p>แอปพลิเคชันสำหรับสั่งอาหาร จัดส่ง และติดตามสถานะแบบ Real-time</p>
+                            <div class="project-links">
+                                <a href="#"><i class="fab fa-github"></i> view code</a>
+                                <a href="#"><i class="fas fa-external-link-alt"></i> live demo</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <i class="fas fa-robot"></i>
+                            <h3>AI Dashboard</h3>
+                            <p>ระบบแสดงข้อมูลและวิเคราะห์ผลประกอบการแบบ Real-time ด้วย Machine Learning</p>
+                            <div class="project-links">
+                                <a href="#"><i class="fab fa-github"></i> view code</a>
+                                <a href="#"><i class="fas fa-external-link-alt"></i> live demo</a>
+                            </div>
                         </div>
                     </div>
+                </section>
+
+                <!-- Download Resume Button -->
+                <div style="text-align: center; margin: 40px 0;">
+                    <a href="#" class="download-btn">
+                        <i class="fas fa-download"></i> ดาวน์โหลด Resume (PDF)
+                    </a>
+                </div>
+
+                <!-- Contact Section -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-share-alt"></i> ./contact --social
+                    </h2>
+                    
+                    <div class="contact-info" style="justify-content: center; margin-bottom: 30px;">
+                        <div class="contact-item" style="background: rgba(0, 255, 157, 0.1);">
+                            <i class="fab fa-github" style="color: #00ff9d;"></i>
+                            <a href="#" style="color: #fff;">github.com/phutanet</a>
+                        </div>
+                        <div class="contact-item" style="background: rgba(0, 184, 255, 0.1);">
+                            <i class="fab fa-linkedin" style="color: #00b8ff;"></i>
+                            <a href="#" style="color: #fff;">linkedin.com/in/phutanet</a>
+                        </div>
+                        <div class="contact-item" style="background: rgba(179, 0, 255, 0.1);">
+                            <i class="fab fa-discord" style="color: #b300ff;"></i>
+                            <a href="#" style="color: #fff;">discord/phutanet</a>
+                        </div>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=lig36.github.io" target="_blank" style="background:#1877f2; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+                            <i class="fab fa-facebook"></i> Share
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url=lig36.github.io" target="_blank" style="background:#1da1f2; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+                            <i class="fab fa-twitter"></i> Tweet
+                        </a>
+                        <a href="https://line.me/R/msg/text/?lig36.github.io" target="_blank" style="background:#00c300; color:white; padding:10px 20px; border-radius:5px; text-decoration:none; display:inline-flex; align-items:center; gap:8px;">
+                            <i class="fab fa-line"></i> LINE
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Contact Form -->
+                <section class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-envelope"></i> ./contact --send
+                    </h2>
+                    
+                    <form onsubmit="return validateForm()" style="max-width:600px; margin:0 auto;">
+                        <div style="margin-bottom: 20px;">
+                            <label style="color: #00ff9d; display: block; margin-bottom: 8px; font-family: 'Fira Code';">$ name</label>
+                            <input type="text" id="name" placeholder="กรุณากรอกชื่อ" style="width:100%; padding:15px; background:#0a0c0f; border:1px solid #00ff9d; border-radius:5px; color:#fff; font-family:'Fira Code';">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="color: #00b8ff; display: block; margin-bottom: 8px; font-family: 'Fira Code';">$ email</label>
+                            <input type="email" id="email" placeholder="กรุณากรอกอีเมล" style="width:100%; padding:15px; background:#0a0c0f; border:1px solid #00b8ff; border-radius:5px; color:#fff; font-family:'Fira Code';">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="color: #b300ff; display: block; margin-bottom: 8px; font-family: 'Fira Code';">$ message</label>
+                            <textarea id="message" placeholder="กรุณากรอกข้อความ" rows="5" style="width:100%; padding:15px; background:#0a0c0f; border:1px solid #b300ff; border-radius:5px; color:#fff; font-family:'Fira Code';"></textarea>
+                        </div>
+                        
+                        <button type="submit" style="background:transparent; color:#00ff9d; padding:15px 40px; border:2px solid #00ff9d; border-radius:5px; cursor:pointer; font-size:1.1em; font-family:'Fira Code'; width:100%; transition:all 0.3s;">
+                            <i class="fas fa-paper-plane"></i> ส่งข้อความ
+                        </button>
+                    </form>
                 </section>
             </div>
         </div>
     </div>
 
+    <!-- Matrix Rain Script -->
+    <script>
+        function createMatrix() {
+            const matrix = document.getElementById('matrix');
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            
+            for(let i = 0; i < 50; i++) {
+                const span = document.createElement('span');
+                span.style.left = Math.random() * 100 + '%';
+                span.style.animationDelay = Math.random() * 20 + 's';
+                span.style.animationDuration = Math.random() * 10 + 15 + 's';
+                span.style.opacity = Math.random() * 0.5;
+                
+                setInterval(() => {
+                    span.textContent = chars[Math.floor(Math.random() * chars.length)];
+                }, 100);
+                
+                matrix.appendChild(span);
+            }
+        }
+        createMatrix();
+    </script>
+
     <script src="main.js"></script>
 </body>
-</html>
+    </html>
